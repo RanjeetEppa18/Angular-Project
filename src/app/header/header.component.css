@@ -1,0 +1,8 @@
+.shadowed {
+    -webkit-filter: drop-shadow(5px 5px 5px black );
+filter: drop-shadow(5px 5px 5px black);
+}
+
+.bordershadow{
+    -webkit-box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12)
+  }

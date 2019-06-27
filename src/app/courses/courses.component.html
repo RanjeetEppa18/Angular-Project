@@ -1,0 +1,58 @@
+<!-- <ul style='width: fit-content; font-family: monospace; font-size: 20px; margin-top: 20px' class="center-screen">
+    <div *ngIf='!courses'>
+        <span style="font-size:30px" class='badge badge-warning mb-2'>{{statusMessage}}</span>
+    </div>
+    <div *ngIf='courses && courses.length == 0'>
+        <span style="font-size:30px" class='badge badge-warning mb-2'>No <h2 class='badge badge-danger'>Courses</h2> are <h2
+                class='badge badge-primary'>Enrolled</h2> to show here! <br> Please Add some!</span>
+    </div>
+    <div class='card mb-4 shadow-sm' *ngIf='courses && courses.length > 0'>
+        <div class='card-header'>
+            <app-course-count [all]='getAllStudents()'
+                              [thirty]='getAboveThirtyStudents()'
+                              [fifty]='getAboveFiftyStudents()'
+                              (radioclicked)='changeValue($event)'></app-course-count>
+        </div>
+        <div class='card-body'>
+            Courses
+            <ng-container *ngFor="let course of courses;trackBy:trackById" >
+            <div *ngIf="selectedRadio == 'All' || course.item >= selectedRadio.slice(-2) ">
+                <button (click)='decrementStudents(course)' class="btn btn-warning m-2"
+                    [disabled]='false | disable:course.item:"minus"'>
+                    -
+                </button>
+                <span [routerLink]="['/home/',course.course]" style="margin: 20px;padding-left: 60px;padding-right: 50px" class="btn btn-primary m-2">
+                    <h4>{{course.course}}</h4>
+                    <span class="btn btn-danger m-2">
+                        {{course.item}}
+                    </span>
+                </span>
+                <button (click)='incrementStudents(course)' class="btn btn-warning m-2"
+                    [disabled]='false | disable:course.item'>
+                    +
+                </button>
+            </div>
+        </ng-container>
+        </div>
+    </div>
+    <button (click)='getCourses()' class="btn btn-block btn-outline-danger">Reload</button>
+</ul> -->
+
+<div class=" center-screen">
+    <div class='card mb-4 shadow-sm' style="width:30%">
+      <div class='card-header'>
+        <b style="font-size: 20px">Items from Database</b>
+      </div>
+      <div class='card-body'>
+          <div class="list-group">
+              <span class="list-group-item list-group-item-action"  *ngFor="let course of courses;trackBy:trackById" >
+                 {{course.item}} {{course.qty}}
+              </span>
+          </div>
+      </div>
+      <div class="card-footer">
+          <span (click)='sentoStore()' class="btn btn-success m-2" style="font-size: 100%;margin-right: 100px !important">Add</span>
+          <span class="btn btn-warning"  style="font-size: 100%">Clear</span>
+      </div>
+  </div>
+  </div>

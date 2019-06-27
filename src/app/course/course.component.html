@@ -1,0 +1,27 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+<div class="center-screen" style="background:white;height:94.6vh">
+  <div *ngIf='!course'><b>Fetching data ...</b>
+  </div>
+  <div *ngIf='course && courselength == 0'><b>{{code}} </b> <span class="badge badge-danger">Doesn't EXIST</span> in
+    <b>DATABASE</b> !
+    <button routerLink='/home' class="btn btn-primary btn-sm">Back to Home</button>
+  </div>
+  <div *ngIf='course && courselength > 0' style="width:25%" class="card mb-4 shadow">
+    <div class="card-header">
+      <nav class="navbar">
+        <button (click)='back()' class="btn btn-primary glyphicon glyphicon-chevron-left" style="font-weight:bold" [disabled] = 'false | disableroute:course.prev'>&lt;</button>
+        <span style="font-weight: bold;font-size:30px;">{{course.data.course}}</span>
+        <button (click)='front()' class="btn btn-primary glyphicon glyphicon-chevron-right" style="font-weight:bold" [disabled] = 'false | disableroute:course.next' >&gt;</button>
+      </nav>
+      <!-- <img src='assets/img/the_real_kakarot_by_daimaoha5a4_dd3ptxu.png'> -->
+    </div>
+    <div class="card-body">
+      <ul style='list-style: circle' class='mt-3 mb-4'>
+        <li><b>Info: </b> {{course.data.details}}</li>
+        <li><b>Students: </b>{{course.data.student}}</li>
+      </ul>
+    </div>
+    <div routerLink='/home' class="card-footer"><span class="btn btn-danger btn-sm"><b>Home</b></span></div>
+  </div>
+</div>

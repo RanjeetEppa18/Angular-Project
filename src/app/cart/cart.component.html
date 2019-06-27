@@ -1,0 +1,18 @@
+<div class=" center-screen">
+  <div class='card mb-4 shadow-sm' style="width:30%">
+    <div class='card-header'>
+      <b style="font-size: 20px">Cart Items</b>
+    </div>
+    <div class='card-body'>
+        <div class="list-group">
+            <span class="list-group-item list-group-item-action"  *ngFor="let cartItem of cartItems;trackBy:trackById" >
+               {{cartItem.item}} {{cartItem.qty}}
+            </span>
+        </div>
+    </div>
+    <div class="card-footer">
+        <span (click)='sentoStore()' class="btn btn-success m-2" style="font-size: 100%;margin-right: 100px !important">Add</span>
+        <span class="btn btn-warning"  style="font-size: 100%">Clear</span>
+    </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+<!-- Default checked -->
+<span class="custom-control custom-control-inline custom-radio">
+  <input type="radio" class="custom-control-input" id="all" name="defaultExampleRadios" value='All' [(ngModel)]='selectedRadio' (change)='radioButtonClicked()'>
+  <label class="custom-control-label" for="all">All({{all}})</label>
+</span>
+<!-- Default unchecked -->
+<span class="custom-control custom-control-inline custom-radio">
+  <input type="radio" class="custom-control-input" id="above30" name="defaultExampleRadios" value='Above 30' [(ngModel)]='selectedRadio' (change)='radioButtonClicked()'>
+  <label class="custom-control-label" for="above30">Above 30({{thirty}})</label>
+</span>
+<!-- Default unchecked -->
+<span class="custom-control custom-control-inline custom-radio">
+  <input type="radio" class="custom-control-input" id="above50" name="defaultExampleRadios" value='Above 50' [(ngModel)]='selectedRadio' (change)='radioButtonClicked()'>
+  <label class="custom-control-label" for="above50">Above 50({{fifty}})</label>
+</span>
